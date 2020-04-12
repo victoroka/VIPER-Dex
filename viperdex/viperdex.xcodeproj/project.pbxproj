@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848839322442C64B00E094EC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848839312442C64B00E094EC /* SnapKit.framework */; };
+		848839332442C64B00E094EC /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848839312442C64B00E094EC /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A889FA2442598500535644 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A889F92442598500535644 /* PokemonListViewController.swift */; };
 		84A88A062442693F00535644 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88A052442693F00535644 /* NetworkError.swift */; };
 		84A88A082442695C00535644 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88A072442695C00535644 /* NetworkHelper.swift */; };
@@ -17,6 +19,8 @@
 		84A88A1224428EA100535644 /* PokemonListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88A1124428EA100535644 /* PokemonListRouter.swift */; };
 		84A88A142442927E00535644 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88A132442927E00535644 /* Pokemon.swift */; };
 		84A88A1624429B0E00535644 /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88A1524429B0E00535644 /* PokemonList.swift */; };
+		84BE47B62442BA02009372A8 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE47B52442BA02009372A8 /* CodeView.swift */; };
+		84BE47BB2442BE32009372A8 /* PokemonListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE47BA2442BE32009372A8 /* PokemonListCell.swift */; };
 		84C0933D243D64F20063DF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0933C243D64F20063DF73 /* AppDelegate.swift */; };
 		84C0933F243D64F20063DF73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0933E243D64F20063DF73 /* SceneDelegate.swift */; };
 		84C09346243D64F70063DF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C09345243D64F70063DF73 /* Assets.xcassets */; };
@@ -34,7 +38,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		848839342442C64B00E094EC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				848839332442C64B00E094EC /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		848839312442C64B00E094EC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		84A889F92442598500535644 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		84A88A052442693F00535644 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		84A88A072442695C00535644 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -45,6 +64,9 @@
 		84A88A1124428EA100535644 /* PokemonListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRouter.swift; sourceTree = "<group>"; };
 		84A88A132442927E00535644 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		84A88A1524429B0E00535644 /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
+		84BE47B52442BA02009372A8 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		84BE47BA2442BE32009372A8 /* PokemonListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCell.swift; sourceTree = "<group>"; };
+		84BE47BE2442C232009372A8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		84C09339243D64F20063DF73 /* viperdex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viperdex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C0933C243D64F20063DF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C0933E243D64F20063DF73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848839322442C64B00E094EC /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				84A889F92442598500535644 /* PokemonListViewController.swift */,
+				84BE47BA2442BE32009372A8 /* PokemonListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,8 +184,18 @@
 				84A88A052442693F00535644 /* NetworkError.swift */,
 				84A88A072442695C00535644 /* NetworkHelper.swift */,
 				84A88A09244269A400535644 /* Endpoint.swift */,
+				84BE47B52442BA02009372A8 /* CodeView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		84BE47BD2442C232009372A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				848839312442C64B00E094EC /* SnapKit.framework */,
+				84BE47BE2442C232009372A8 /* SnapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		84C09330243D64F20063DF73 = {
@@ -170,6 +204,7 @@
 				84C0933B243D64F20063DF73 /* viperdex */,
 				84C09352243D64F70063DF73 /* viperdexTests */,
 				84C0933A243D64F20063DF73 /* Products */,
+				84BE47BD2442C232009372A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +248,8 @@
 				84C09335243D64F20063DF73 /* Sources */,
 				84C09336243D64F20063DF73 /* Frameworks */,
 				84C09337243D64F20063DF73 /* Resources */,
+				84BE47BC2442C1EB009372A8 /* ShellScript */,
+				848839342442C64B00E094EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +335,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84BE47BC2442C1EB009372A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84C09335243D64F20063DF73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -310,11 +368,13 @@
 				84A88A1024426DE700535644 /* PokemonListInteractor.swift in Sources */,
 				84A88A1624429B0E00535644 /* PokemonList.swift in Sources */,
 				84A88A0C24426BD400535644 /* PokemonListPresenter.swift in Sources */,
+				84BE47BB2442BE32009372A8 /* PokemonListCell.swift in Sources */,
 				84A88A142442927E00535644 /* Pokemon.swift in Sources */,
 				84A889FA2442598500535644 /* PokemonListViewController.swift in Sources */,
 				84A88A0A244269A400535644 /* Endpoint.swift in Sources */,
 				84C0933F243D64F20063DF73 /* SceneDelegate.swift in Sources */,
 				84A88A0E24426C3300535644 /* PokemonListProtocols.swift in Sources */,
+				84BE47B62442BA02009372A8 /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +528,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NBXKDMT65;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = viperdex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,6 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NBXKDMT65;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = viperdex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
