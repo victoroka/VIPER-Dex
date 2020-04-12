@@ -14,11 +14,14 @@ class PokemonListViewController: UIViewController, PokemonListPresenterDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PokemonListRouter.createPokemonListModule(pokemonListReference: self)
         presenter?.viewDidLoad()
     }
     
-    func showPokemons() {
-        
+    func showPokemons(_ pokemonList: PokemonList) {
+        for pokemon in pokemonList.pokemons {
+            print("\(pokemon.name)")
+        }
     }
     
 }

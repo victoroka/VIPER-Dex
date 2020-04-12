@@ -14,4 +14,14 @@ class PokemonListRouter: PokemonListRouterProtocol {
         
     }
     
+    class func createPokemonListModule(pokemonListReference: PokemonListViewController) {
+        let presenter: PokemonListPresenterProtocol & PokemonListInteractorDelegate = PokemonListPresenter()
+        
+        pokemonListReference.presenter = presenter
+        pokemonListReference.presenter?.router = PokemonListRouter()
+        pokemonListReference.presenter?.view = pokemonListReference
+        pokemonListReference.presenter?.interactor = PokemonListInteractor()
+        pokemonListReference.presenter?.interactor?.presenter = presenter
+    }
+    
 }

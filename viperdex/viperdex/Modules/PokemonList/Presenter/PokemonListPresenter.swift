@@ -19,7 +19,7 @@ class PokemonListPresenter: PokemonListPresenterProtocol {
     }
     
     func loadPokemonList() {
-        interactor?.fetchPokemonList()
+        interactor?.getPokemonList()
     }
     
     func showSelectedPokemon() {
@@ -29,8 +29,8 @@ class PokemonListPresenter: PokemonListPresenterProtocol {
 
 extension PokemonListPresenter: PokemonListInteractorDelegate {
     
-    func didFetchPokemonList() {
-        view?.showPokemons()
+    func didFetchPokemonList(pokemonList: PokemonList) {
+        view?.showPokemons(pokemonList)
     }
     
 }

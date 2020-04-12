@@ -18,17 +18,17 @@ protocol PokemonListPresenterProtocol: class {
 }
 
 protocol PokemonListPresenterDelegate: class {
-    func showPokemons()
+    func showPokemons(_ pokemonList: PokemonList)
 }
 
 protocol PokemonListInteractorProtocol: class {
     var presenter: PokemonListInteractorDelegate? { get set }
     
-    func fetchPokemonList()
+    func getPokemonList()
 }
 
 protocol PokemonListInteractorDelegate: class {
-    func didFetchPokemonList()
+    func didFetchPokemonList(pokemonList: PokemonList)
 }
 
 protocol PokemonListRouterProtocol: class {
