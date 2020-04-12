@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class PokemonListInteractor: PokemonListInteractorProtocol {
+    
+    weak var presenter: PokemonListInteractorDelegate?
+    
+    func fetchPokemonList() {
+        presenter?.didFetchPokemonList()
+    }
+    
+}

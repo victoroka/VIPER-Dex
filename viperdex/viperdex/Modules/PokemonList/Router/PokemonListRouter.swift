@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class PokemonListRouter: PokemonListRouterProtocol {
+    
+    func pushToPokemonDetail() {
+        
+    }
+    
+}

@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class Pokemon: Codable {
+    
+    let name: String
+    let urlDetail: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case urlDetail = "url"
+    }
+    
+    init(name: String, urlDetail: String) {
+        self.name = name
+        self.urlDetail = urlDetail
+    }
+    
+}

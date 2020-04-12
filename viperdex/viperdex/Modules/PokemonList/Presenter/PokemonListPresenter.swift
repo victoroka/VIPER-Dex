@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+class PokemonListPresenter: PokemonListPresenterProtocol {
+    
+    weak var view: PokemonListPresenterDelegate?
+    var interactor: PokemonListInteractorProtocol?
+    var router: PokemonListRouterProtocol?
+    
+    func viewDidLoad() {
+        self.loadPokemonList()
+    }
+    
+    func loadPokemonList() {
+        interactor?.fetchPokemonList()
+    }
+    
+    func showSelectedPokemon() {
+        router?.pushToPokemonDetail()
+    }
+}
+
+extension PokemonListPresenter: PokemonListInteractorDelegate {
+    
+    func didFetchPokemonList() {
+        view?.showPokemons()
+    }
+    
+}

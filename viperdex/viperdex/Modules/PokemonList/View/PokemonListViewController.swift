@@ -8,10 +8,17 @@
 
 import UIKit
 
-class PokemonListViewController: UIViewController {
-
+class PokemonListViewController: UIViewController, PokemonListPresenterDelegate {
+    
+    var presenter: PokemonListPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
-
+    
+    func showPokemons() {
+        
+    }
+    
 }

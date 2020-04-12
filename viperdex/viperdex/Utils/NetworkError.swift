@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case notFound
+    case forbidden
+    case unauthorized
+    case badUrl
+    case mappingError
+    case emptyResponseDataError
+    case unknownError
+}
