@@ -6,7 +6,7 @@
 //  Copyright © 2020 Victor Oka. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PokemonListPresenter: PokemonListPresenterProtocol {
     
@@ -22,15 +22,15 @@ class PokemonListPresenter: PokemonListPresenterProtocol {
         interactor?.getPokemonList()
     }
     
-    func showSelectedPokemon() {
-        router?.pushToPokemonDetail()
+    func showSelectedPokemon(with pokemon: Pokemon, from viewController: UIViewController) {
+        router?.pushToPokemonDetail(with: pokemon, from: viewController)
     }
 }
 
 extension PokemonListPresenter: PokemonListInteractorDelegate {
     
     func didFetchPokemonList(pokemonList: PokemonList) {
-        view?.showPokemons(pokemonList)
+        view?.showPokemons(with: pokemonList)
     }
     
 }

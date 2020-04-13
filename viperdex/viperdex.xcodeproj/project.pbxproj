@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8427FD6024450391009EC77C /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427FD5F24450391009EC77C /* PokemonDetailViewController.swift */; };
 		848839322442C64B00E094EC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848839312442C64B00E094EC /* SnapKit.framework */; };
 		848839332442C64B00E094EC /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848839312442C64B00E094EC /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A889FA2442598500535644 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A889F92442598500535644 /* PokemonListViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8427FD5F24450391009EC77C /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		848839312442C64B00E094EC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		84A889F92442598500535644 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		84A88A052442693F00535644 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -97,10 +99,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8427FD5D24450317009EC77C /* PokemonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8427FD5E2445034F009EC77C /* View */,
+			);
+			path = PokemonDetail;
+			sourceTree = "<group>";
+		};
+		8427FD5E2445034F009EC77C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8427FD5F24450391009EC77C /* PokemonDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84A889FB24425BB800535644 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				84A889FC24425BE100535644 /* PokemonList */,
+				8427FD5D24450317009EC77C /* PokemonDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -363,6 +382,7 @@
 			files = (
 				84A88A1224428EA100535644 /* PokemonListRouter.swift in Sources */,
 				84A88A082442695C00535644 /* NetworkHelper.swift in Sources */,
+				8427FD6024450391009EC77C /* PokemonDetailViewController.swift in Sources */,
 				84C0933D243D64F20063DF73 /* AppDelegate.swift in Sources */,
 				84A88A062442693F00535644 /* NetworkError.swift in Sources */,
 				84A88A1024426DE700535644 /* PokemonListInteractor.swift in Sources */,

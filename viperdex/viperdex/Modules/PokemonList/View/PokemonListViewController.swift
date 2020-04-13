@@ -16,10 +16,6 @@ class PokemonListViewController: UIViewController, PokemonListPresenterDelegate 
     var safeArea: UILayoutGuide!
     let tableView = UITableView()
     
-//    override func loadView() {
-//        setupView()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         safeArea = view.layoutMarginsGuide
@@ -29,14 +25,11 @@ class PokemonListViewController: UIViewController, PokemonListPresenterDelegate 
         presenter?.viewDidLoad()
     }
     
-    func showPokemons(_ pokemonList: PokemonList) {
+    func showPokemons(with pokemonList: PokemonList) {
         self.numberOfRows = pokemonList.pokemons.count
         self.pokemonList = pokemonList
         DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
-        for pokemon in pokemonList.pokemons {
-            print("\(pokemon.name)")
         }
     }
     
@@ -70,7 +63,8 @@ extension PokemonListViewController: CodeView {
 extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let pokemon = pokemonList?.pokemons[indexPath.row] else { return }
+        presenter?.showSelectedPokemon(with: pokemon, from: self)
     }
     
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Victor Oka. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PokemonListPresenterProtocol: class {
     var interactor: PokemonListInteractorProtocol? { get set }
@@ -14,11 +14,11 @@ protocol PokemonListPresenterProtocol: class {
     var router: PokemonListRouterProtocol? { get set }
     
     func viewDidLoad()
-    func showSelectedPokemon()
+    func showSelectedPokemon(with pokemon: Pokemon, from viewController: UIViewController)
 }
 
 protocol PokemonListPresenterDelegate: class {
-    func showPokemons(_ pokemonList: PokemonList)
+    func showPokemons(with pokemonList: PokemonList)
 }
 
 protocol PokemonListInteractorProtocol: class {
@@ -32,5 +32,6 @@ protocol PokemonListInteractorDelegate: class {
 }
 
 protocol PokemonListRouterProtocol: class {
-    func pushToPokemonDetail()
+    func pushToPokemonDetail(with pokemon: Pokemon, from viewController: UIViewController)
+    static func createPokemonListModule(pokemonListReference: PokemonListViewController)
 }

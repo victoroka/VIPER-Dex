@@ -6,12 +6,13 @@
 //  Copyright © 2020 Victor Oka. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PokemonListRouter: PokemonListRouterProtocol {
     
-    func pushToPokemonDetail() {
-        
+    func pushToPokemonDetail(with pokemon: Pokemon, from viewController: UIViewController) {
+        let nextViewController = PokemonDetailViewController()
+        viewController.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     class func createPokemonListModule(pokemonListReference: PokemonListViewController) {
