@@ -11,56 +11,84 @@ import UIKit
 class PokemonListViewController: UIViewController, PokemonListPresenterDelegate {
     
     var presenter: PokemonListPresenterProtocol?
+    var pokemonList: PokemonList?
     var numberOfRows: Int = 0
+    var safeArea: UILayoutGuide!
     let tableView = UITableView()
     
-    override func loadView() {
-        self.setupView()
-    }
+//    override func loadView() {
+//        setupView()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        safeArea = view.layoutMarginsGuide
+        setupView()
+        setupTableView()
         PokemonListRouter.createPokemonListModule(pokemonListReference: self)
         presenter?.viewDidLoad()
     }
     
     func showPokemons(_ pokemonList: PokemonList) {
-        numberOfRows = pokemonList.pokemons.count
-        tableView.reloadData()
+        self.numberOfRows = pokemonList.pokemons.count
+        self.pokemonList = pokemonList
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         for pokemon in pokemonList.pokemons {
             print("\(pokemon.name)")
         }
     }
     
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
+    }
+    
 }
 
 extension PokemonListViewController: CodeView {
+    
     func buildViewHierarchy() {
-        
+        view.addSubview(tableView)
     }
     
     func setupConstraints() {
-        
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(safeArea)
+            make.bottom.left.right.equalToSuperview()
+        }
     }
     
     func setupAdditionalConfigurarion() {
-        
+        self.view.backgroundColor = .lightGray
     }
     
 }
 
 extension PokemonListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
 }
 
 extension PokemonListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
+        cell.nameLabel.text = pokemonList?.pokemons[indexPath.row].name
+        return cell
     }
+    
 }
