@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PokemonListInteractor: PokemonListInteractorProtocol {
+final class PokemonListInteractor: PokemonListInteractorProtocol {
     
     weak var presenter: PokemonListInteractorDelegate?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PokemonListCell: UITableViewCell {
+final class PokemonListCell: UITableViewCell {
 
     lazy var nameLabel: UILabel = {
         let view = UILabel(frame: .zero)

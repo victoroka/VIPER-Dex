@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PokemonListViewController: UIViewController, PokemonListPresenterDelegate {
+final class PokemonListViewController: UIViewController, PokemonListPresenterDelegate {
     
     var presenter: PokemonListPresenterProtocol?
     var pokemonList: PokemonList?
-    var numberOfRows: Int = 0
-    var safeArea: UILayoutGuide!
-    let tableView = UITableView()
+    private var numberOfRows: Int = 0
+    private var safeArea: UILayoutGuide!
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,31 @@ class PokemonListViewController: UIViewController, PokemonListPresenterDelegate 
         tableView.register(PokemonListCell.self, forCellReuseIdentifier: "cell")
     }
     
+    private func configureNavigationBar(titleColor: UIColor, backgoundColor: UIColor, tintColor: UIColor, title: String, preferredLargeTitle: Bool, translucent: Bool = false) {
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor]
+            navBarAppearance.titleTextAttributes = [.foregroundColor: titleColor]
+            navBarAppearance.backgroundColor = backgoundColor
+
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.compactAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+
+            navigationController?.navigationBar.prefersLargeTitles = preferredLargeTitle
+            navigationController?.navigationBar.isTranslucent = translucent
+            navigationController?.navigationBar.tintColor = tintColor
+            navigationItem.title = title
+        } else {
+            navigationController?.navigationBar.barTintColor = backgoundColor
+            navigationController?.navigationBar.tintColor = tintColor
+            navigationController?.navigationBar.isTranslucent = translucent
+            navigationItem.title = title
+        }
+    }
+    
 }
 
 extension PokemonListViewController: CodeView {
@@ -55,7 +80,7 @@ extension PokemonListViewController: CodeView {
     }
     
     func setupAdditionalConfigurarion() {
-        self.view.backgroundColor = .lightGray
+        configureNavigationBar(titleColor: .white, backgoundColor: .systemPurple, tintColor: .white, title: "Kanto Pokémons", preferredLargeTitle: true)
     }
     
 }

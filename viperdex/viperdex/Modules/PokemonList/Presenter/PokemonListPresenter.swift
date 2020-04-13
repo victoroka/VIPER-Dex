@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PokemonListPresenter: PokemonListPresenterProtocol {
+final class PokemonListPresenter: PokemonListPresenterProtocol {
     
     weak var view: PokemonListPresenterDelegate?
     var interactor: PokemonListInteractorProtocol?

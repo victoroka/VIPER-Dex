@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PokemonListRouter: PokemonListRouterProtocol {
+final class PokemonListRouter: PokemonListRouterProtocol {
     
     func pushToPokemonDetail(with pokemon: Pokemon, from viewController: UIViewController) {
         let nextViewController = PokemonDetailViewController()
