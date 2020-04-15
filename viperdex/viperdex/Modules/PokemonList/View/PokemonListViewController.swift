@@ -48,15 +48,16 @@ final class PokemonListViewController: UIViewController, PokemonListPresenterDel
             navBarAppearance.titleTextAttributes = [.foregroundColor: titleColor]
             navBarAppearance.backgroundColor = backgoundColor
 
+            navigationController?.view.backgroundColor = backgoundColor
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.compactAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-
             navigationController?.navigationBar.prefersLargeTitles = preferredLargeTitle
             navigationController?.navigationBar.isTranslucent = translucent
             navigationController?.navigationBar.tintColor = tintColor
             navigationItem.title = title
         } else {
+            navigationController?.view.backgroundColor = backgoundColor
             navigationController?.navigationBar.barTintColor = backgoundColor
             navigationController?.navigationBar.tintColor = tintColor
             navigationController?.navigationBar.isTranslucent = translucent

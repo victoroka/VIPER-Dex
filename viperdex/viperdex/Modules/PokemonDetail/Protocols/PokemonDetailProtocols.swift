@@ -8,22 +8,29 @@
 
 import UIKit
 
-protocol PokemonDetailPresenterProtocol {
+protocol PokemonDetailPresenterProtocol: class {
+    var view: PokemonDetailPresenterDelegate? { get set }
+    var interactor: PokemonDetailInteractorProtocol? { get set }
+    var router: PokemonDetailRouterProtocol? { get set }
     
+    func viewDidLoad()
+    func backButtonPressed(from viewController: UIViewController)
 }
 
-protocol PokemonDetailPresenterDelegate {
-    
+protocol PokemonDetailPresenterDelegate: class {
+    func showPokemonDetail(with pokemonDetail: PokemonDetail)
 }
 
-protocol PokemonDetailInteractorProtocol {
+protocol PokemonDetailInteractorProtocol: class {
+    var presenter: PokemonDetailInteractorDelegate? { get set }
     
+    func getPokemonDetail()
 }
 
-protocol PokemonDetailInteractorDelegate {
-    
+protocol PokemonDetailInteractorDelegate: class {
+    func didFetchPokemonDetail(pokemonDetail: PokemonDetail)
 }
 
-protocol PokemonDetailRouterProtocol {
-    
+protocol PokemonDetailRouterProtocol: class {
+    static func createPokemonDetailModule(with pokemonDetailReference: PokemonDetailViewController, and pokemon: Pokemon)
 }
