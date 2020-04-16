@@ -23,11 +23,11 @@ struct PokemonDetail: Codable {
 
 struct Ability: Codable {
     
-    let name: String
+    let abilityInfo: Info
     let isHidden: Bool
     
     enum CodingKeys: String, CodingKey {
-        case name = "name"
+        case abilityInfo = "ability"
         case isHidden = "is_hidden"
     }
     
@@ -35,10 +35,21 @@ struct Ability: Codable {
 
 struct Type: Codable {
     
+    let typeInfo: Info
+    
+    enum CodingKeys: String, CodingKey {
+        case typeInfo = "type"
+    }
+    
+}
+
+struct Info: Codable {
+    
     let name: String
+    let url: String
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
+        case url = "url"
     }
-    
 }

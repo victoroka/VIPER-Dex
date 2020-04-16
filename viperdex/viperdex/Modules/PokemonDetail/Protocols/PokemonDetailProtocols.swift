@@ -13,8 +13,7 @@ protocol PokemonDetailPresenterProtocol: class {
     var interactor: PokemonDetailInteractorProtocol? { get set }
     var router: PokemonDetailRouterProtocol? { get set }
     
-    func viewDidLoad()
-    func backButtonPressed(from viewController: UIViewController)
+    func viewDidLoad(pokemon: Pokemon)
 }
 
 protocol PokemonDetailPresenterDelegate: class {
@@ -24,7 +23,7 @@ protocol PokemonDetailPresenterDelegate: class {
 protocol PokemonDetailInteractorProtocol: class {
     var presenter: PokemonDetailInteractorDelegate? { get set }
     
-    func getPokemonDetail()
+    func getPokemonDetail(pokemon: Pokemon)
 }
 
 protocol PokemonDetailInteractorDelegate: class {
@@ -32,5 +31,5 @@ protocol PokemonDetailInteractorDelegate: class {
 }
 
 protocol PokemonDetailRouterProtocol: class {
-    static func createPokemonDetailModule(with pokemonDetailReference: PokemonDetailViewController, and pokemon: Pokemon)
+    static func createPokemonDetailModule(with pokemonDetailReference: PokemonDetailViewController)
 }

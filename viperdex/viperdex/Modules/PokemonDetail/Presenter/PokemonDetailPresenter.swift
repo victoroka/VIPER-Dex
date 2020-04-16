@@ -14,12 +14,12 @@ final class PokemonDetailPresenter: PokemonDetailPresenterProtocol {
     var router: PokemonDetailRouterProtocol?
     var interactor: PokemonDetailInteractorProtocol?
     
-    func viewDidLoad() {
-        
+    func viewDidLoad(pokemon: Pokemon) {
+        self.loadPokemonDetail(pokemon: pokemon)
     }
     
-    func backButtonPressed(from viewController: UIViewController) {
-        
+    func loadPokemonDetail(pokemon: Pokemon) {
+        interactor?.getPokemonDetail(pokemon: pokemon)
     }
     
 }
@@ -27,7 +27,7 @@ final class PokemonDetailPresenter: PokemonDetailPresenterProtocol {
 extension PokemonDetailPresenter: PokemonDetailInteractorDelegate {
     
     func didFetchPokemonDetail(pokemonDetail: PokemonDetail) {
-        
+        view?.showPokemonDetail(with: pokemonDetail)
     }
     
 }

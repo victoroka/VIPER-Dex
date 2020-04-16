@@ -107,7 +107,7 @@ extension PokemonListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PokemonListCell
-        cell.nameLabel.text = pokemonList?.pokemons[indexPath.row].name
+        cell.nameLabel.text = pokemonList?.pokemons[indexPath.row].name.capitalized
         return cell
     }
     

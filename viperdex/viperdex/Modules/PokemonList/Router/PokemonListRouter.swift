@@ -11,7 +11,7 @@ import UIKit
 final class PokemonListRouter: PokemonListRouterProtocol {
     
     func pushToPokemonDetail(with pokemon: Pokemon, from viewController: UIViewController) {
-        let nextViewController = PokemonDetailViewController()
+        let nextViewController = PokemonDetailViewController(pokemon: pokemon)
         viewController.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
