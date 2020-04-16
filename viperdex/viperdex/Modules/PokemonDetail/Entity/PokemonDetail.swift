@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Pokemon Detail Entity
 struct PokemonDetail: Codable {
     
     let name: String
@@ -21,6 +22,7 @@ struct PokemonDetail: Codable {
     }
 }
 
+// MARK: Ability Entity
 struct Ability: Codable {
     
     let abilityInfo: Info
@@ -33,6 +35,7 @@ struct Ability: Codable {
     
 }
 
+// MARK: Type Entity
 struct Type: Codable {
     
     let typeInfo: Info
@@ -43,6 +46,7 @@ struct Type: Codable {
     
 }
 
+// MARK: Info Entity
 struct Info: Codable {
     
     let name: String

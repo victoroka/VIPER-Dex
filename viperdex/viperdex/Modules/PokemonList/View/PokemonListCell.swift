@@ -35,6 +35,7 @@ final class PokemonListCell: UITableViewCell {
 
 }
 
+// MARK: Code View Protocol
 extension PokemonListCell: CodeView {
     
     func buildViewHierarchy() {

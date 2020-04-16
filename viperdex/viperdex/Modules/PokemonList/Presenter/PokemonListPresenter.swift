@@ -27,6 +27,7 @@ final class PokemonListPresenter: PokemonListPresenterProtocol {
     }
 }
 
+// MARK: Interactor Delegate
 extension PokemonListPresenter: PokemonListInteractorDelegate {
     
     func didFetchPokemonList(pokemonList: PokemonList) {

@@ -25,14 +25,14 @@ final class PokemonDetailScreen: UIView {
     
     private lazy var nameLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.font = UIFont(name: "Avenir-Bold", size: 18)
+        view.font = UIFont(name: "Avenir-Heavy", size: 18)
         view.textColor = .white
         return view
     }()
     
     private lazy var typesLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.font = UIFont(name: "Avenir", size: 15)
+        view.font = UIFont(name: "Avenir-Oblique", size: 15)
         view.textColor = .white
         return view
     }()
@@ -77,6 +77,7 @@ final class PokemonDetailScreen: UIView {
     
 }
 
+// MARK: Code View Protocol
 extension PokemonDetailScreen: CodeView {
     
     func buildViewHierarchy() {
@@ -105,7 +106,7 @@ extension PokemonDetailScreen: CodeView {
     }
     
     func setupAdditionalConfigurarion() {
-        cardView.backgroundColor = .purple
+        cardView.backgroundColor = .systemPurple
         cardView.layer.cornerRadius = 10
     }
     

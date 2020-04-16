@@ -16,6 +16,14 @@ final class PokemonListViewController: UIViewController, PokemonListPresenterDel
     private var safeArea: UILayoutGuide!
     private let tableView = UITableView()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         safeArea = view.layoutMarginsGuide
@@ -67,6 +75,7 @@ final class PokemonListViewController: UIViewController, PokemonListPresenterDel
     
 }
 
+// MARK: Code View Protocol
 extension PokemonListViewController: CodeView {
     
     func buildViewHierarchy() {
@@ -86,6 +95,7 @@ extension PokemonListViewController: CodeView {
     
 }
 
+// MARK: Table View Delegate
 extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -95,6 +105,7 @@ extension PokemonListViewController: UITableViewDelegate {
     
 }
 
+// MARK: Table View Data Source
 extension PokemonListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

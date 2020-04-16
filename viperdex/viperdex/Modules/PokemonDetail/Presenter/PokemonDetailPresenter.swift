@@ -24,6 +24,7 @@ final class PokemonDetailPresenter: PokemonDetailPresenterProtocol {
     
 }
 
+// MARK: Interactor Delegate
 extension PokemonDetailPresenter: PokemonDetailInteractorDelegate {
     
     func didFetchPokemonDetail(pokemonDetail: PokemonDetail) {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Pokemon List Entity
 struct PokemonList: Codable {
     
     let pokemons: [Pokemon]
